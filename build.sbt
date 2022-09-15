@@ -2,9 +2,7 @@ name := "zio-dojo"
 
 version := "0.1"
 
-scalaVersion := "2.13.6"
+scalaVersion := "3.2.0"
 
-idePackagePrefix := Some("personal.dojo.zio")
-
-libraryDependencies += "dev.zio" %% "zio" % "1.0.12"
-libraryDependencies += "dev.zio" %% "zio-streams" % "1.0.12"
+libraryDependencies += "dev.zio" %% "zio" % "2.0.2"
+libraryDependencies += "dev.zio" %% "zio-streams" % "2.0.2"
