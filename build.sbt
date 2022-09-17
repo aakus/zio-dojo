@@ -1,8 +1,18 @@
-name := "zio-dojo"
+ThisBuild / scalaVersion := "3.2.0"
 
-version := "0.1"
+val Versions = new {
+  val zio = "2.0.2"
+}
 
-scalaVersion := "3.2.0"
+val commonSettings: Seq[Setting[_]] = Seq(
+  scalacOptions -= "-Xfatal-warnings",
+  libraryDependencies ++= Seq(
+    "dev.zio" %% "zio" % Versions.zio,
+    "dev.zio" %% "zio-streams" % Versions.zio
+  )
+)
 
-libraryDependencies += "dev.zio" %% "zio" % "2.0.2"
-libraryDependencies += "dev.zio" %% "zio-streams" % "2.0.2"
+lazy val rockthejvm = (project in file("rockthejvm"))
+  .settings(
+    commonSettings
+  )
