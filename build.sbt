@@ -5,7 +5,9 @@ val Versions = new {
 }
 
 val commonSettings = Seq(
-  scalacOptions -= "-Xfatal-warnings",
+  scalacOptions ++= Seq(
+    "-source:future"
+  ),
   libraryDependencies ++= Seq(
     "dev.zio" %% "zio" % Versions.zio,
     "dev.zio" %% "zio-streams" % Versions.zio,
