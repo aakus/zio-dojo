@@ -11,5 +11,5 @@ object Tests extends ZIOSpecDefault:
         _ <- r.update(_ + 1)
         v <- r.get
       } yield assertTrue(v == 1)
-    }
+    },
   )
